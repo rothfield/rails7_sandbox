@@ -36,7 +36,8 @@
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
-/vendor/*
+/vendor/bundle/*
 /test/*
+
 .gitattributes
 .ruby-version
