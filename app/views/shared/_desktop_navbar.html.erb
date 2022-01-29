@@ -14,7 +14,9 @@
     <%= render partial: "shared/logo" %>
 
         <% ary.each do |h| %>
-        <a :class="(my_controller == controller) && 'bg-gray-900 text-white'"  x-data="{ my_controller: '<%= h[:controller] %>' }" href="<%= h[:path] %>" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" ><%= h[:text] %></a>
+          <a 
+           @click="controller = my_controller"
+            :class="(my_controller == controller) && 'bg-gray-900 text-white'"  x-data="{ my_controller: '<%= h[:controller] %>' }" href="<%= h[:path] %>" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" ><%= h[:text] %></a>
         <% end %>
       </div>
     </div>
