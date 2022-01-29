@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'customers/index'
   get 'inspections/index'
   get 'home/index'
+  get 'home/navbar'
 
   root "home#index"
 end
