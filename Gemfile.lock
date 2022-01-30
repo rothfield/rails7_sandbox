@@ -89,6 +89,8 @@ GEM
       reline (>= 0.2.7)
     digest (3.1.0)
     erubi (1.10.0)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.9.1)
@@ -132,6 +134,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.1-x86_64-linux)
       racc (~> 1.4)
+    psych (4.0.3)
+      stringio
     public_suffix (4.0.6)
     puma (5.6.1)
       nio4r (~> 2.0)
@@ -166,6 +170,8 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    rdoc (6.4.0)
+      psych (>= 4.0.0)
     regexp_parser (2.2.0)
     reline (0.3.1)
       io-console (~> 0.5)
@@ -185,6 +191,7 @@ GEM
     sqlite3 (1.4.2)
     stimulus-rails (1.0.2)
       railties (>= 6.0.0)
+    stringio (3.0.1)
     strscan (3.0.1)
     tailwindcss-rails (2.0.5-x86_64-linux)
       railties (>= 6.0.0)
@@ -218,10 +225,12 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  faker (~> 2.19)
   importmap-rails
   jbuilder
   puma (~> 5.0)
   rails (~> 7.0.1)
+  rdoc (~> 6.4)
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)

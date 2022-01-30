@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  get 'invoices/index'
-  get 'logs/index'
-  get 'tasks/index'
-  get 'machines/index'
-  get 'customers/index'
-  get 'inspections/index'
-  get 'home/index'
-  get 'home/navbar'
 
+  resources :machines
+
+  get 'invoices', to: 'invoices#index'
+  get 'logs', to: 'logs#index'
+  get 'tasks', to: 'tasks#index'
+  get 'customers', to: 'customers#index'
+  get 'inspections', to: 'inspections#index'
+  get 'navbar', to: "home#navbar"
   root "home#index"
 end
