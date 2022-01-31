@@ -38,7 +38,7 @@ class MachinesController < ApplicationController
   def update
     respond_to do |format|
       if @machine.update(machine_params)
-        format.html { redirect_to machine_url(@machine), notice: "Machine was successfully updated." }
+        format.html { redirect_to machines_url, notice: "Machine was successfully updated." }
         format.json { render :show, status: :ok, location: @machine }
       else
         format.html { render :edit, status: :unprocessable_entity }

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :customer_machines
+  resources :customers do
+     resources :customer_machines
+  end
 
   resources :machines
 

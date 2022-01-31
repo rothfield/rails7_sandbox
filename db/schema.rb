@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_30_033529) do
+ActiveRecord::Schema.define(version: 2022_01_31_162938) do
+
+  create_table "customer_machines", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.integer "machine_id", null: false
+    t.string "serial_number"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_customer_machines_on_customer_id"
+    t.index ["machine_id"], name: "index_customer_machines_on_machine_id"
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "machines", force: :cascade do |t|
     t.string "name"
@@ -18,4 +34,6 @@ ActiveRecord::Schema.define(version: 2022_01_30_033529) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "customer_machines", "customers"
+  add_foreign_key "customer_machines", "machines"
 end
