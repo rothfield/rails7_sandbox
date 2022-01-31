@@ -76,3 +76,4 @@ gem "tailwindcss-rails", "~> 2.0"
 gem "faker", "~> 2.19"
 
 gem "rdoc", "~> 6.4"
+gem 'rubocop'
