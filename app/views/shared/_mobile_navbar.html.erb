@@ -1,9 +1,12 @@
-<div style="display: none;" x-doc="mobile_menu" class="sm:hidden" id="mobile-menu" x-show="open">
+<div x-show="open" x-doc="mobile_menu" class="sm:hidden" id="mobile-menu">
   <div class="px-2 pt-2 pb-3 space-y-1">
     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
     <% ary.each do |h| %>
-      <a @click="open = false; controller = my_controller" :class="(my_controller == controller) && 'bg-gray-900 text-white'"  
-        x-data="{ my_controller: '<%= h[:controller] %>' }" href="<%= h[:path] %>" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" ><%= h[:text] %></a>
+      <a :class="(my_controller == controller) && 'bg-gray-900 text-white'"
+        x-model="controller"
+       x-data="{ my_controller: '<%= h[:controller] %>' }"
+       href="<%= h[:path] %>" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" ><%= h[:text] %>
+      </a>
     <% end %>
   </div>
 </div>
