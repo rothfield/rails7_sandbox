@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
-  def navbar
-    render partial: "shared/navbar"
+  def header
+    render partial: "shared/header"
   end
 
   def index

@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   get 'tasks', to: 'tasks#index'
   get 'customers', to: 'customers#index'
   get 'inspections', to: 'inspections#index'
-  get 'navbar', to: "home#navbar"
+  get 'header', to: "home#header"
   root "home#index"
 end

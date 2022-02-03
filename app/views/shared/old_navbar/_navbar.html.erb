@@ -9,13 +9,11 @@
       ]
     %>
   <!-- This example requires Tailwind CSS v2.0+ -->
-  <nav
-      x-model="controller"
-      x-model="open"
-      x-data="{ open: false,
-                  controller: '<%= controller_name %>' }" class="bg-gray-800">
-                  <%= render partial: "shared/desktop_navbar", locals: { ary: ary } %>
-                  <%= render partial: "shared/mobile_navbar", locals: {ary: ary} %>
+  <nav x-model="controller"
+       x-model="open"
+       x-data="{ open: false, controller: '<%= controller_name %>' }" class="bg-gray-800" >
+       <%= render partial: "shared/desktop_navbar", locals: { ary: ary } %>
+       <%= render partial: "shared/mobile_navbar", locals: {ary: ary} %>
   </nav>
 </turbo-frame>
 
