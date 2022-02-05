@@ -4,5 +4,5 @@
   <%= render "form", customer_machine: @customer_machine %>
 
   <%= link_to "Show this customer machine", @customer_machine, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-  <%= link_to "Back to customer machines", customer_machines_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <%= link_to "Back to customer", edit_customer_path(@customer_machine.customer), class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 </div>

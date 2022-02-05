@@ -1,4 +1,4 @@
-<turbo-frame id='body'>
+<div x-data="">
   <%= form_with(model: customer, class: "contents") do |form| %>
     <% if customer.errors.any? %>
       <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
@@ -11,19 +11,27 @@
         </ul>
       </div>
     <% end %>
-
+    <p>
+    <p>
+    <button type="button" @click="$refs.name.removeAttribute('readonly')">Edit details</button>
+    </p>
     <div class="my-5">
       <%= form.label :name %>
-      <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+      <%= form.text_field :name, 
+        readonly: true,
+        "x-ref": "name",  
+        class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
     </div>
     <div class="inline">
       <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
     </div>
   <% end %>
 
-  <turbo-frame id="customer_machine">
-  </turbo-frame>
-  <turbo-frame target="customer_machine">
-    <%= link_to "New customer machine", new_customer_customer_machine_path(customer) %>
-  </turbo-frame>
-</turbo-frame>
+    <% if (! @customer.new_record?) && @customer.customer_machines %> 
+      <%= render template: "customer_machines/index", locals: { customer: customer, customer_machines: customer.customer_machines} %>
+  <% end %>
+  <p>
+  <% if ! customer.new_record? %>
+    <%= link_to "Add customer machine", new_customer_customer_machine_path(customer) %>
+  <% end %>
+</div>

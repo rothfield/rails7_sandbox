@@ -38,11 +38,9 @@ class CustomersController < ApplicationController
   def update
     respond_to do |format|
       if @customer.update(customer_params)
-        format.html { redirect_to customer_url(@customer), notice: "Customer was successfully updated." }
-        format.json { render :show, status: :ok, location: @customer }
+        format.html { redirect_to customers_url, notice: "Customer was successfully updated." }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @customer.errors, status: :unprocessable_entity }
       end
     end
   end

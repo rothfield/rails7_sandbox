@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :customer_machines
-  resources :customers do
+  resources :customers, shallow: true do
      resources :customer_machines
   end
 

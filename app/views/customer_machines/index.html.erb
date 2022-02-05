@@ -1,14 +1,22 @@
-<div class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
-
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Customer machines</h1>
-    <%= link_to 'New customer machine', new_customer_machine_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-  </div>
-
-  <div id="customer_machines" class="min-w-full">
-    <%= render @customer_machines %>
-  </div>
+<turbo-frame id="page-content">
+  <div class="w-full">
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Serial #</th>
+    </thead>
+    <tbody>
+    <% @customer.customer_machines.each do | customer_machine | %>
+      <tr>
+        <td>
+        <%= link_to(customer_machine.machine.name, edit_customer_machine_path(customer_machine)) %>
+        </td>
+        <td>
+        <%= customer_machine.serial_number %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table> 
 </div>
+</turbo-frame>

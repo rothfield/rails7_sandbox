@@ -1,3 +1,4 @@
+<turbo-frame id="header" target="page-content">
 <% ary = [
         { controller: "inspections", text: "Inspections", path: inspections_path},
         { controller: "customers", text: "Customers", path: customers_path},
@@ -7,7 +8,6 @@
       ]
       controller= controller_name
 %>
-<turbo-frame id='header'>
 <!-- Page Header -->
 <header id="page-header" class="flex flex-none items-center bg-gray-800 z-1"
                          x-data="{ userDropdownOpen: false, 
@@ -151,5 +151,5 @@
     <!-- END Mobile Navigation -->
   </div>
 </header>
-<!-- END Page Header -->
 </turbo-frame>
+<!-- END Page Header -->
