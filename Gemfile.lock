@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/hotwired/turbo-rails.git
+  revision: 2a2a5ec12e4233cf33e5d3f0a6855834f4e5e4ec
+  specs:
+    turbo-rails (1.0.1)
+      actionpack (>= 6.0.0)
+      railties (>= 6.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -166,6 +174,10 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.2)
       loofah (~> 2.3)
+    rails_performance (1.0.1)
+      rails
+      redis
+      redis-namespace
     railties (7.0.1)
       actionpack (= 7.0.1)
       activesupport (= 7.0.1)
@@ -177,6 +189,9 @@ GEM
     rake (13.0.6)
     rdoc (6.4.0)
       psych (>= 4.0.0)
+    redis (4.6.0)
+    redis-namespace (1.8.1)
+      redis (>= 3.0.4)
     regexp_parser (2.2.0)
     reline (0.3.1)
       io-console (~> 0.5)
@@ -214,9 +229,6 @@ GEM
       railties (>= 6.0.0)
     thor (1.2.1)
     timeout (0.2.0)
-    turbo-rails (1.0.1)
-      actionpack (>= 6.0.0)
-      railties (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
@@ -248,14 +260,16 @@ DEPENDENCIES
   jbuilder
   puma (~> 5.0)
   rails (~> 7.0.1)
+  rails_performance (~> 1.0)
   rdoc (~> 6.4)
+  redis (~> 4.6)
   rubocop
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
   tailwindcss-rails (~> 2.0)
-  turbo-rails
+  turbo-rails!
   tzinfo-data
   web-console
   webdrivers

@@ -1,3 +1,4 @@
+<turbo-frame id='page-content'>
 <div class="mx-auto md:w-2/3 w-full flex">
   <div class="mx-auto">
     <% if notice.present? %>
@@ -10,6 +11,7 @@
     <div class="inline-block ml-2">
       <%= button_to 'Destroy this customer_machine', customer_machine_path(@customer_machine), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
     </div>
-    <%= link_to 'Back to customer_machines', customer_machines_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Back to customer_machines', customer_customer_machines_path(@customer_machine.customer), class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
 </div>
+</turbo-frame>
