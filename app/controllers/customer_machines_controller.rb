@@ -2,7 +2,6 @@ class CustomerMachinesController < ApplicationController
   before_action :set_customer_machine, only: %i[ show edit update destroy ]
   before_action :set_customer, only: %i[create index new]
 
-  # GET /customer_machines or /customer_machines.json
   def index
     @customer_machines = CustomerMachine.all
   end
@@ -35,12 +34,12 @@ class CustomerMachinesController < ApplicationController
   # PATCH/PUT /customer_machines/1 or /customer_machines/1.json
   def update
     respond_to do |format|
+      #  raise @customer_machine.inspect
       if @customer_machine.update(customer_machine_params)
-        format.html { redirect_to customer_machine_url(@customer_machine), notice: "Customer machine was successfully updated." }
-        format.json { render :show, status: :ok, location: @customer_machine }
+        #format.html { redirect_to customer_machine_url(@customer_machine), notice: "Customer machine was successfully updated." }
+        format.html { redirect_to edit_customer_url(@customer_machine.customer_id), notice: "Customer machine was successfully updated." }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @customer_machine.errors, status: :unprocessable_entity }
       end
     end
   end
