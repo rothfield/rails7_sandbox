@@ -1,4 +1,4 @@
-require './db/seed_data.rb'
+require "./db/seed_data"
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -15,12 +15,12 @@ else
   puts "Already seeded machines!"
 end
 if Customer.count.zero?
-  wineries=SeedData::WINERIES
+  wineries = SeedData::WINERIES
   100.times do |i|
-    customer=Customer.create(name: wineries.sample)
+    customer = Customer.create(name: wineries.sample)
     next if !customer.valid?
     rand(5..14).times do
-      customer.customer_machines.create  machine: Machine.all.sample, serial_number: Faker::Number::leading_zero_number 
+      customer.customer_machines.create machine: Machine.all.sample, serial_number: Faker::Number.leading_zero_number
     end
   end
   5.times do |i|

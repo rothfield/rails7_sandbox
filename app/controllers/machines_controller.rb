@@ -1,5 +1,5 @@
 class MachinesController < ApplicationController
-  before_action :set_machine, only: %i[ show edit update destroy ]
+  before_action :set_machine, only: %i[show edit update destroy]
 
   # GET /machines or /machines.json
   def index
@@ -58,13 +58,14 @@ class MachinesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_machine
-      @machine = Machine.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def machine_params
-      params.require(:machine).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_machine
+    @machine = Machine.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def machine_params
+    params.require(:machine).permit(:name)
+  end
 end
