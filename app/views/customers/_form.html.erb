@@ -24,14 +24,14 @@
     <% end %>
     <p>
     <p>
-    </p>
-    <div class="my-5">
-      <%= form.label :name %>
+    </p> 
+    <div class="grid-cols-2 my-5">
+      <%= form.label :Customer %>
       <%= form.text_field :name, 
         readonly: true,
         "x-ref": "name",  
-        class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-    <button type="button" @click="edit = !edit ;toggle(edit);">Edit</button>
+        class: "shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2" %>
+    <button type="button" @click="edit = !edit ;toggle(edit);">Change Name</button>
 
     </div>
     <div class="inline">

@@ -38,6 +38,6 @@
 !/app/assets/builds/.keep
 /vendor/bundle/*
 /test/*
-
+dump.rdb
 .gitattributes
 .ruby-version
