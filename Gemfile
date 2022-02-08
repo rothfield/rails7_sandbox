@@ -74,9 +74,12 @@ gem "tailwindcss-rails", "~> 2.0"
 gem "faker", "~> 2.19"
 
 gem "rdoc", "~> 6.4"
-gem 'standard', group: [:development, :test]
+gem "standard", group: [:development, :test]
 
 gem "rails_performance", "~> 1.0"
 
 gem "redis", "~> 4.6"
 
+gem "slim", "~> 4.1"
+
+gem "html2slim", "~> 0.2.0"
