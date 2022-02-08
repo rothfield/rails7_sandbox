@@ -1,0 +1,31 @@
+turbo-frame#page-content
+  - if notice.present?
+    p#notice.py-2.px-3.bg-green-50.mb-5.text-green-500.font-medium.rounded-lg.inline-block
+      = notice
+  div[style=""]
+    .bg-gray-100.py-6
+      .max-w-7xl.mx-auto.sm:px-6.lg:px-8
+        .flex.flex-col
+          .-my-2.overflow-x-auto.sm:-mx-6.lg:-mx-8
+            .py-2.align-middle.inline-block.min-w-full.sm:px-6.lg:px-8
+              .shadow.overflow-hidden.border-b.border-gray-200.sm:rounded-lg
+
+  table.min-w-full.divide-y.divide-gray-200
+
+  thead.bg-gray-50
+    tr
+      th.px-6.py-3.text-left.text-xs.font-medium.text-gray-500.uppercase.tracking-wider[scope="col"]
+        |  Machine 
+  span.sr-only
+    | Edit
+  tbody
+    - @machines.each_with_index do |machine,i |
+      |  <tr class="
+      = i.odd? ? "bg-white" : "bg-gray-50"
+      | " > 
+      td.px-6.py-4.whitespace-nowrap.text-sm.font-medium.text-gray-900
+        = machine.name
+      td.px-6.py-4.whitespace-nowrap.text-right.text-sm.font-medium
+        |  <a href="
+        = edit_machine_path(machine)
+        | " class="text-indigo-600 hover:text-indigo-900">Edit
