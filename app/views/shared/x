@@ -1,0 +1,1 @@
+        a href=h[:path] x-model="controller" @click="controller = my_controller" x-data="#{xdata}"   @class="(my_controller == controller) && 'bg-gray-900 text-white'" class="text-sm font-medium flex items-center space-x-2 px-3 py-2 rounded text-gray-300 border border-transparent hover:text-white hover:bg-gray-700 hover:border-gray-700 active:bg-gray-600 active:border-gray-600" 

@@ -1,0 +1,20 @@
+  <div class="w-full">
+   <table class="border-2">
+    <thead>
+      <th>Name</th>
+      <th>Serial #</th>
+    </thead>
+    <tbody>
+    <% @customer.customer_machines.each do | customer_machine | %>
+      <tr>
+        <td>
+        <%= link_to(customer_machine.machine.name, edit_customer_machine_path(customer_machine)) %>
+        </td>
+        <td>
+        <%= customer_machine.serial_number %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table> 
+</div>

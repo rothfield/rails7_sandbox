@@ -1,31 +1,17 @@
+- ary = [{ controller: "inspections", text: "Inspections", path: inspections_path},{ controller: "customers", text: "Customers", path: customers_path},          { controller: "machines", text: "Machines", path: machines_path},          { controller: "tasks", text: "Tasks", path: tasks_path}, { controller: "logs", text: "Logs", path: logs_path}]
+- controller= controller_name
 turbo-frame#header[target="page-content"]
-  - ary = [
-  -         { controller: "inspections", text: "Inspections", path: inspections_path},
-  -         { controller: "customers", text: "Customers", path: customers_path},
-  -         { controller: "machines", text: "Machines", path: machines_path},
-  -         { controller: "tasks", text: "Tasks", path: tasks_path},
-  -         { controller: "logs", text: "Logs", path: logs_path}
-  -       ]
-  -       controller= controller_name
-  |  <header id="page-header" class="flex flex-none items-center bg-gray-800 z-1" x-data="{ userDropdownOpen: false, mobileNavOpen: false, controller: '
-  = controller
-  | '}" x-model="controller" x-model="mobileNavOpen" }" > 
+  header id="page-header" class="flex flex-none items-center bg-gray-800 z-1" x-data="{ userDropdownOpen: false, mobileNavOpen: false, controller=#{controller}'}" x-model="controller mobileNavOpen"
   .container.xl:max-w-7xl.mx-auto.px-4.lg:px-8
 
   .flex.justify-between.py-4
 
   .flex.items-center.space-x-2.lg:space-x-6
-    |  <a href="
-    = root_path
-    | " class="group inline-flex items-center space-x-2 font-semibold text-lg tracking-wide text-gray-200 hover:text-indigo-300 active:text-gray-200"> 
+    a href=root_path class="group inline-flex items-center space-x-2 font-semibold text-lg tracking-wide text-gray-200 hover:text-indigo-300 active:text-gray-200" 
     = image_tag "logo1.png"
     nav.hidden.lg:flex.lg:items-center.lg:space-x-2
       - ary.each do |h|
-        |  <a href="
-        = h[:path]
-        | " @click="controller = my_controller" x-data="{ my_controller: '
-        = h[:controller]
-        | ' }" :class="(my_controller == controller) && 'bg-gray-900 text-white'" class="text-sm font-medium flex items-center space-x-2 px-3 py-2 rounded text-gray-300 border border-transparent hover:text-white hover:bg-gray-700 hover:border-gray-700 active:bg-gray-600 active:border-gray-600"> 
+        a href= h[:path] @click="controller = my_controller" x-data="{ my_controller: '#{[:controller]}" @class="my_controller == controller) && 'bg-gray-900 text-white'" class="text-sm font-medium flex items-center space-x-2 px-3 py-2 rounded text-gray-300 border border-transparent hover:text-white hover:bg-gray-700 hover:border-gray-700 active:bg-gray-600 active:border-gray-600" 
         span
           = h[:text]
   .flex.items-center.space-x-1.lg:space-x-2
@@ -70,7 +56,7 @@ turbo-frame#header[target="page-content"]
       svg.opacity-50.hi-solid.hi-lock-closed.inline-block.w-5.h-5[fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"]
         path[fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"]
   span
-    | Sign out
+    Sign out
   .lg:hidden
     button.inline-flex.justify-center.items-center.space-x-2.border.font-semibold.focus:outline-none.px-3.py-2.leading-5.text-sm.rounded.border-gray-900.bg-gray-700.text-gray-200.shadow-sm.hover:text-white.hover:bg-opacity-50.hover:shadow.focus:ring.focus:ring-gray-500.focus:ring-opacity-25.active:bg-opacity-100.active:shadow-none[type="button" x-on:click="mobileNavOpen = !mobileNavOpen"]
       svg.hi-solid.hi-menu.inline-block.w-5.h-5[fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"]
@@ -78,12 +64,7 @@ turbo-frame#header[target="page-content"]
   .lg:hidden[x-show="mobileNavOpen"]
     nav.flex.flex-col.space-y-2.py-4.border-t.border-gray-700
       - ary.each do |h|
-        |  <a href="
-        = h[:path]
-        | " @click="controller = my_controller; mobileNavOpen = false" x-data="{ my_controller: '
-        = h[:controller]
-        | ' }" :class="(my_controller == controller) && 'bg-gray-900 text-white'" class="text-sm font-medium flex items-center space-x-2 px-3 py-2 rounded text-gray-300 border border-transparent hover:text-white hover:bg-gray-700 hover:border-gray-700 active:bg-gray-600 active:border-gray-600"> 
+        a href=h[:path] @click="controller = my_controller; mobileNavOpen = false" x-data="{ my_controller: '#{h[:controller]}'" @class="my_controller == controller) && 'bg-gray-900 text-white'" class="text-sm font-medium flex items-center space-x-2 px-3 py-2 rounded text-gray-300 border border-transparent hover:text-white hover:bg-gray-700 hover:border-gray-700 active:bg-gray-600 active:border-gray-600" 
         unused-svg.opacity-50.hi-solid.hi-home.inline-block.w-5.h-5[fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"]
           path[d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"]
-          span
-            = h[:text]
+        span = h[:text]
