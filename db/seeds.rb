@@ -29,3 +29,29 @@ if Customer.count.zero?
 else
   puts "Already seeded customers!"
 end
+if CheckpointCategory.count.zero?
+  ["mechanical", "electrical", "pneumatic", "hyraulic"].each do |c|
+    CheckpointCategory.create!(name: c, short_name: c[0..4])
+  end
+end
+Checkpoint.destroy_all
+20.times do |i|
+  cpc = CheckpointCategory.where(name: "mechanical").first
+  Checkpoint.create(name: "Check #{Faker::ElectricalComponents.electromechanical}", checkpoint_category_id: cpc.id,
+    code: "ME" +
+    ("%.2d" % i))
+end
+20.times do |i|
+  cpc = CheckpointCategory.where(name: "electrical").first
+  Checkpoint.create(name: "Check voltage on #{Faker::ElectricalComponents.active}",
+    checkpoint_category_id: cpc.id,
+    code: "EL" +
+    ("%.2d" % i))
+end
+20.times do |i|
+  cpc = CheckpointCategory.where(name: "pneumatic").first
+  Checkpoint.create(name: "Check voltage on #{Faker::ElectricalComponents.active}",
+    checkpoint_category_id: cpc.id,
+    code: "PN" +
+    ("%.2d" % i))
+end

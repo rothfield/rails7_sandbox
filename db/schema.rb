@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_31_162938) do
+ActiveRecord::Schema.define(version: 2022_02_09_145238) do
+
+  create_table "checkpoint_categories", force: :cascade do |t|
+    t.string "name"
+    t.string "short_name"
+    t.integer "order"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "checkpoints", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.integer "checkpoint_category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["checkpoint_category_id"], name: "index_checkpoints_on_checkpoint_category_id"
+  end
+
   create_table "customer_machines", force: :cascade do |t|
     t.integer "customer_id", null: false
     t.integer "machine_id", null: false
@@ -34,6 +52,7 @@ ActiveRecord::Schema.define(version: 2022_01_31_162938) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "checkpoints", "checkpoint_categories"
   add_foreign_key "customer_machines", "customers"
   add_foreign_key "customer_machines", "machines"
 end
