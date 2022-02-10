@@ -83,3 +83,5 @@ gem "redis", "~> 4.6"
 gem "slim", "~> 4.1"
 
 gem "html2slim", "~> 0.2.0"
+
+gem "view_component", "~> 2.48"
