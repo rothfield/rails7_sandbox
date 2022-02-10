@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :checkpoints
+  resources :checkpoint_categories
   resources :customers, shallow: true do
     resources :customer_machines
   end

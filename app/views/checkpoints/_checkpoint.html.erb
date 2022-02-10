@@ -1,0 +1,22 @@
+<div id="<%= dom_id checkpoint %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= checkpoint.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Code:</strong>
+    <%= checkpoint.code %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Checkpoint category:</strong>
+    <%= checkpoint.checkpoint_category.name %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this checkpoint", checkpoint, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this checkpoint', edit_checkpoint_path(checkpoint), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
