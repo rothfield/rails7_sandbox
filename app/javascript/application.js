@@ -5,3 +5,4 @@ Alpine.start()
 import "@hotwired/turbo-rails"
 import { Turbo } from "@hotwired/turbo-rails"
 Window.turbo=Turbo
+import "controllers"
