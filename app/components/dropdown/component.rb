@@ -5,5 +5,9 @@ module Dropdown
     def initialize(items)
       @items = items.map { |item| OpenStruct.new(item) }
     end
+
+    def render?
+      true
+    end
   end
 end

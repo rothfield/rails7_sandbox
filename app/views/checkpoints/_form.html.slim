@@ -17,6 +17,6 @@
   .my-5
     = render SelectComponent.new(form,:checkpoint_category_id, options_from_collection_for_select(CheckpointCategory.all, "id", "name",checkpoint.checkpoint_category_id),label: "Category") do
   .my-5
-    = render Dropdown::Component.new([{ title: "Home", url: root_url, method: "get"}, { title: "Checkpoints", url: checkpoints_url, method: "get", selected: true}]  )
+    = render Dropdown::Component.new([{ title: "Home", url: root_path, method: "get"}, { title: "Checkpoints", url: new_checkpoint_path, method: "get", selected: true}]  )
   .inline
     = form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer"
