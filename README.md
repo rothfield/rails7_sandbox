@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project explores different features of Rails7 and modern web app development 
 
-Things you may want to cover:
+* Importmaps
+* Hotwire
+* Stimulus
+* Tailwind
+* Process of implementing tailwind components in Rails projects.
+* Alpinejs to implement js required by tailwind
+* Stimulus to implement js required by tailwind
+* Use of viewcomponent
+* Some use of slim templating
+* Docker container for development. Uses Arch
+* 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
